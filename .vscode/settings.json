@@ -1,0 +1,17 @@
+{
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "editor.tabCompletion": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "typescript.useCodeSnippetsOnMethodSuggest": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": true
+    },
+}

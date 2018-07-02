@@ -39,8 +39,26 @@ Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another
  * LongestAbsoluteFilePath388
  */
 public class LongestAbsoluteFilePath388 {
+    public int lengthLongestPath(String input) {
+        if (input.length() == 0 || input == null) {
+            return 0;
+        }
+        int res = 0;
+        int[] sum = new int[input.length() + 1];
+        for (String line : input.split("\n")) {
+            int level = line.lastIndexOf("\t") + 2;
+            int curLen = line.length() - level + 1;
+            if (line.contains(".")) {
+                res = Math.max(res, sum[level - 1] + curLen);
+            } else {
+                sum[level] = sum[level - 1] + curLen + 1;
+            }
+        }
+        return res;
+    }
 
     public static void main(String[] args) {
-        
+        String input = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
+        System.out.println(new LongestAbsoluteFilePath388().lengthLongestPath(input));
     }
 }
